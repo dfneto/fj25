@@ -1,0 +1,14 @@
+Servidor MySQL:http://wiki.uniformserver.com/index.php/Mini_Servers:_MySQL_5.0.67_Portable#Download 
+usuário: root
+senha: root
+
+
+1 ERRO) WARN: HHH000342: Could not obtain connection to query metadata : Communications link failure
+O mini servidor MySQL está usando uma porta diferente 3311
+http://stackoverflow.com/questions/11041955/hibernate-unable-to-connect-to-pure-mysql-installation-on-debian
+
+
+
+2 ERRO) java.sql.SQLException: Unknown system variable 'language' mysql
+Incompatibilidade do conector com a versão do banco
+https://bugs.mysql.com/bug.php?id=77665
