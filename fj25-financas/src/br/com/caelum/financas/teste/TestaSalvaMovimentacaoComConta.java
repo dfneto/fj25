@@ -5,6 +5,7 @@ import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 
+import br.com.caelum.financas.dao.MovimentacaoDao;
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.modelo.Movimentacao;
 import br.com.caelum.financas.modelo.TipoMovimentacao;
@@ -27,11 +28,13 @@ public class TestaSalvaMovimentacaoComConta {
 		Movimentacao movimentacao = new Movimentacao();
 		movimentacao.setConta(conta);
 		movimentacao.setData(Calendar.getInstance());
-		movimentacao.setDescricao("waka waka");
-		movimentacao.setValor(new BigDecimal("100"));
+		movimentacao.setDescricao("LUMPA LUMPA");
+		movimentacao.setValor(new BigDecimal("200"));
 		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		
-		manager.persist(movimentacao);
+		MovimentacaoDao dao = new MovimentacaoDao(manager);
+
+		dao.adicionar(movimentacao);
 
 		manager.close();
 		
