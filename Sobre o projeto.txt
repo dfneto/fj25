@@ -1,4 +1,5 @@
 Servidor MySQL:http://wiki.uniformserver.com/index.php/Mini_Servers:_MySQL_5.0.67_Portable#Download 
+mysql --user=root --password=root
 usuário: root
 senha: root
 

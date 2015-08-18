@@ -26,7 +26,7 @@ public class Movimentacao {
 	@Enumerated(EnumType.STRING)
 	private TipoMovimentacao tipoMovimentacao;
 
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private Conta conta;
 
 	private BigDecimal valor;
