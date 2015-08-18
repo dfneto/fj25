@@ -6,33 +6,23 @@ import br.com.caelum.financas.dao.ContaDao;
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.util.JPAUtil;
 
-public class TestaInsereConta {
-
+public class TestaRemoveConta {
+	
 	public static void main(String[] args) {
-
-		long inicio = System.currentTimeMillis();
 
 		EntityManager manager = new JPAUtil().getEntityManager();
 
 		ContaDao dao = new ContaDao(manager);
 		
-		Conta conta = new Conta();
-		conta.setTitular("DavidDAOnovo");
-		conta.setBanco("Banco do DAO");
-		conta.setAgencia("2488-0");
-		conta.setNumero("13870-3");
-
+		Conta conta = dao.buscar(3);
+		
 		manager.getTransaction().begin();
-
-		dao.adicionar(conta);
+		
+		dao.remover(conta);
 		
 		manager.getTransaction().commit();
+		
 		manager.close();
-
-		long fim = System.currentTimeMillis();
-		System.out.println("Conta gravada com sucesso!!!!!!!");
-		System.out.println("Executado em: " + (fim - inicio) + "ms");
-
 	}
 
 }
