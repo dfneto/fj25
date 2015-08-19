@@ -11,7 +11,7 @@ import br.com.caelum.financas.modelo.Movimentacao;
 import br.com.caelum.financas.modelo.TipoMovimentacao;
 import br.com.caelum.financas.util.JPAUtil;
 
-public class TestaSalvaMovimentacaoComConta {
+public class TestaInsereMovimentacaoComConta {
 	public static void main(String[] args) {
 		
 		EntityManager manager = new JPAUtil().getEntityManager();
@@ -27,8 +27,8 @@ public class TestaSalvaMovimentacaoComConta {
 		
 		Movimentacao movimentacao = new Movimentacao();
 		movimentacao.setConta(conta);
-		movimentacao.setData(Calendar.getInstance());
-		movimentacao.setDescricao("LUMPA LUMPA");
+		//movimentacao.setData(Calendar.getInstance());
+		movimentacao.setDescricao("DUMPA DUMPA");
 		movimentacao.setValor(new BigDecimal("200"));
 		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		

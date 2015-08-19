@@ -14,7 +14,7 @@ public class TestaRemoveConta {
 
 		ContaDao dao = new ContaDao(manager);
 		
-		Conta conta = dao.buscar(3);
+		Conta conta = dao.buscar(12);
 		
 		manager.getTransaction().begin();
 		

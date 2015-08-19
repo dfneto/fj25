@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -31,6 +33,13 @@ public class Movimentacao {
 
 	private BigDecimal valor;
 	private String descricao;
+	
+	@PrePersist
+	@PreUpdate
+	public void preAltera(){
+		System.out.println("Atualizando a data da movimentação antes de ser persistida ...");
+		this.setData(Calendar.getInstance());
+	}
 
 	public TipoMovimentacao getTipoMovimentacao() {
 		return tipoMovimentacao;
