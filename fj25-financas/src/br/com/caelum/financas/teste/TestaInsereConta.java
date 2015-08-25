@@ -12,13 +12,14 @@ public class TestaInsereConta {
 
 		long inicio = System.currentTimeMillis();
 
+		//EntityManager eh responsavel por gerenciar entidades no contexto de persistencia
 		EntityManager manager = new JPAUtil().getEntityManager();
 
 		ContaDao dao = new ContaDao(manager);
 		
 		Conta conta = new Conta();
-		conta.setTitular("DavidDAOnovo");
-		conta.setBanco("Banco do DAO");
+		conta.setTitular("Teste");
+		conta.setBanco("Banco do teste");
 		conta.setAgencia("2488-0");
 		conta.setNumero("13870-3");
 
